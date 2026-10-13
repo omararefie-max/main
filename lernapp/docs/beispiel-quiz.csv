@@ -1,0 +1,4 @@
+id;fach;thema;kapitel;frage;A;B;C;D;E;richtig;erklaerung;schwierigkeit;tags
+csv-001;Innere Medizin;Kardiologie;Hypertonie;"Ab welchem Praxis-Blutdruck liegt eine Hypertonie vor?";ab 120/80 mmHg;ab 130/85 mmHg;ab 140/90 mmHg;ab 160/100 mmHg;ab 180/110 mmHg;C;"Ab 140/90 mmHg bei wiederholten Messungen.";1;Blutdruck|Grundlagen
+csv-002;Pharmakologie;Antidote;;"Antidot bei Opioid-Überdosierung?";Flumazenil;Naloxon;Atropin;Physostigmin;Acetylcystein;B;"Naloxon ist ein Opioid-Antagonist.";2;Antidot
+csv-003;Innere Medizin;Endokrinologie;Diabetes;"Typische Hypoglykämie-Zeichen? (Mehrfachauswahl)";Schwitzen und Zittern;Heißhunger;Azetongeruch;Kußmaul-Atmung;Tachykardie;A,B,E;"Adrenerge Warnzeichen; Azeton/Kußmaul gehören zur Ketoazidose.";2;Diabetes|Notfall

@@ -1,0 +1,77 @@
+{
+  "format": "pruefungstrainer-v1",
+  "karten": [
+    {
+      "id": "med-kardio-001",
+      "fach": "Innere Medizin",
+      "thema": "Kardiologie",
+      "kapitel": "Arterielle Hypertonie",
+      "frage": "Ab welchem Praxis-Blutdruckwert wird nach den europäischen Leitlinien (ESC/ESH) eine arterielle Hypertonie diagnostiziert?",
+      "antworten": [
+        "ab 120/80 mmHg",
+        "ab 130/85 mmHg",
+        "ab 140/90 mmHg",
+        "ab 160/100 mmHg",
+        "ab 180/110 mmHg"
+      ],
+      "richtig": [
+        "C"
+      ],
+      "erklaerung": "Eine Hypertonie liegt bei wiederholten Praxismessungen ab 140/90 mmHg vor. Werte von 130–139/85–89 mmHg gelten als hochnormal, ab 180/110 mmHg spricht man von einer schweren Hypertonie (Grad 3).",
+      "schwierigkeit": 1,
+      "tags": [
+        "Blutdruck",
+        "Leitlinie",
+        "Grundlagen"
+      ]
+    },
+    {
+      "id": "med-endo-001",
+      "fach": "Innere Medizin",
+      "thema": "Endokrinologie",
+      "kapitel": "Diabetes mellitus",
+      "frage": "Welche Symptome sind typisch für eine Hypoglykämie? (Mehrfachauswahl)",
+      "antworten": [
+        "Schwitzen und Zittern",
+        "Heißhunger",
+        "Azetongeruch der Atemluft",
+        "Kußmaul-Atmung",
+        "Herzklopfen (Tachykardie)"
+      ],
+      "richtig": [
+        "A",
+        "B",
+        "E"
+      ],
+      "erklaerung": "Bei Unterzuckerung überwiegen adrenerge Warnzeichen wie Schwitzen, Zittern, Herzklopfen und Heißhunger. Azetongeruch und Kußmaul-Atmung gehören zur diabetischen Ketoazidose, also zur Überzuckerung.",
+      "schwierigkeit": 2,
+      "tags": [
+        "Diabetes",
+        "Notfall"
+      ]
+    },
+    {
+      "id": "med-pharma-001",
+      "fach": "Pharmakologie",
+      "thema": "Antidote",
+      "kapitel": "",
+      "frage": "Welcher Wirkstoff ist das spezifische Antidot bei einer Opioid-Überdosierung mit Atemdepression?",
+      "antworten": [
+        "Flumazenil",
+        "Naloxon",
+        "Atropin",
+        "Physostigmin",
+        "Acetylcystein"
+      ],
+      "richtig": [
+        "B"
+      ],
+      "erklaerung": "Naloxon ist ein Opioid-Antagonist. Zu beachten: Seine Wirkdauer ist oft kürzer als die des Opioids, deshalb ist eine Überwachung nötig. Flumazenil wirkt bei Benzodiazepinen, Atropin bei Cholinesterasehemmern, Acetylcystein bei Paracetamol-Vergiftung.",
+      "schwierigkeit": 2,
+      "tags": [
+        "Antidot",
+        "Notfall"
+      ]
+    }
+  ]
+}

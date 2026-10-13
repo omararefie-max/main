@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/pruefungstrainer-v1.schema.json",
+  "title": "Prüfungstrainer – Inhaltsformat v1",
+  "description": "Datei mit Quizkarten und/oder mündlichen Prüfungsfragen. Beide Listen sind optional. Auch eine reine Liste von Karten bzw. Fragen wird akzeptiert. Gleiche 'id' beim erneuten Import = Eintrag wird aktualisiert, Lernfortschritt bleibt erhalten.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "pruefungstrainer-v1",
+      "description": "Optional, nur zur Dokumentation."
+    },
+    "karten": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/karte"
+      }
+    },
+    "pruefungsfragen": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pruefungsfrage"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "description": "Feste, eindeutige ID (z. B. 'anatomie-herz-017'). Niemals ändern, wenn der Lernfortschritt erhalten bleiben soll. Fehlt sie, wird sie aus dem Fragetext berechnet (dann bleibt sie nur stabil, solange der Fragetext gleich bleibt)."
+    },
+    "karte": {
+      "type": "object",
+      "required": [
+        "frage",
+        "antworten",
+        "richtig"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "fach": {
+          "type": "string",
+          "description": "Oberste Ebene, z. B. 'Innere Medizin'. Standard: 'Allgemein'."
+        },
+        "thema": {
+          "type": "string",
+          "description": "Kategorie/Thema, z. B. 'Kardiologie'. Standard: 'Allgemein'."
+        },
+        "kapitel": {
+          "type": "string",
+          "description": "Optionale dritte Ebene."
+        },
+        "frage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "antworten": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Genau 5 Antworten; Reihenfolge = A, B, C, D, E."
+        },
+        "richtig": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "description": "Buchstaben der richtigen Antworten. Ein Eintrag = Einzelauswahl, mehrere = Mehrfachauswahl (alle müssen gewählt werden)."
+        },
+        "erklaerung": {
+          "type": "string",
+          "description": "Erklärung zur Lösung. Bitte KEINE Buchstaben ('Antwort B') erwähnen, da Antworten gemischt werden können."
+        },
+        "schwierigkeit": {
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "description": "Optional: 1 leicht, 2 mittel, 3 schwer."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "schluesselbegriff": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Kurzform: 'Begriff' oder 'Begriff/Synonym/Synonym' (Schrägstrich trennt Synonyme)."
+        },
+        {
+          "type": "object",
+          "required": [
+            "begriff"
+          ],
+          "properties": {
+            "begriff": {
+              "type": "string"
+            },
+            "synonyme": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "gewicht": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "default": 1,
+              "description": "Wichtigkeit des Pflichtpunkts (z. B. 2 = doppelt so wichtig)."
+            }
+          }
+        }
+      ]
+    },
+    "pruefungsfrage": {
+      "type": "object",
+      "required": [
+        "frage"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "musterantwort"
+          ]
+        },
+        {
+          "required": [
+            "schluesselbegriffe"
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "fach": {
+          "type": "string"
+        },
+        "thema": {
+          "type": "string"
+        },
+        "kapitel": {
+          "type": "string"
+        },
+        "frage": {
+          "type": "string",
+          "minLength": 1,
+          "description": "So formuliert, wie der Prüfer sie laut stellt."
+        },
+        "musterantwort": {
+          "type": "string",
+          "description": "Ausführliche Musterantwort (wird im Protokoll angezeigt)."
+        },
+        "schluesselbegriffe": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/schluesselbegriff"
+          },
+          "description": "Pflichtpunkte, die in einer guten Antwort vorkommen müssen. Die Bewertung zählt, wie viele (gewichtet) genannt wurden. Synonyme und Wortformen helfen, weil die Spracherkennung Wörter oft anders schreibt."
+        },
+        "nachfragen": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optionale Nachfragen, falls die Antwort Lücken hat (in dieser Reihenfolge)."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

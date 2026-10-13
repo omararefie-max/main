@@ -1,0 +1,97 @@
+{
+  "format": "lernapp/1",
+  "_hinweis": "Beispieldaten zur Demonstration des Formats. Inhaltlich NICHT fachlich geprüft – bitte durch eigene, geprüfte Inhalte ersetzen.",
+  "cards": [
+    {
+      "id": "pflege-vital-001",
+      "subject": "Pflege",
+      "topic": "Vitalzeichen",
+      "chapter": "Puls",
+      "question": "Welcher Bereich gilt als normale Ruhepulsfrequenz eines gesunden Erwachsenen?",
+      "answers": ["30–50 Schläge/min", "60–100 Schläge/min", "110–130 Schläge/min", "130–160 Schläge/min", "20–40 Schläge/min"],
+      "correct": ["B"],
+      "explanation": "Der Ruhepuls eines gesunden Erwachsenen liegt bei etwa 60–100 Schlägen pro Minute. Darunter spricht man von Bradykardie, darüber von Tachykardie.",
+      "difficulty": 1,
+      "tags": ["puls", "grundlagen"]
+    },
+    {
+      "id": "pflege-diab-001",
+      "subject": "Pflege",
+      "topic": "Diabetes mellitus",
+      "chapter": "Notfälle",
+      "question": "Welche Zeichen sprechen für eine Unterzuckerung (Hypoglykämie)? (Mehrfachauswahl)",
+      "answers": ["Zittern", "Kaltschweißigkeit", "Heißhunger", "Acetongeruch der Atemluft", "Tiefe, beschleunigte Atmung (Kußmaul-Atmung)"],
+      "correct": ["A", "B", "C"],
+      "explanation": "Typisch für Hypoglykämie sind Zittern, Kaltschweißigkeit und Heißhunger. Acetongeruch und Kußmaul-Atmung sprechen eher für eine diabetische Ketoazidose (Überzuckerung).",
+      "difficulty": 2,
+      "tags": ["diabetes", "notfall"]
+    },
+    {
+      "id": "pflege-pharma-001",
+      "subject": "Pflege",
+      "topic": "Pharmakologie",
+      "chapter": "Herz-Kreislauf",
+      "question": "Welcher der folgenden Wirkstoffe gehört zur Gruppe der Betablocker?",
+      "answers": ["Metoprolol", "Ramipril", "Furosemid", "Amlodipin", "Digoxin"],
+      "correct": ["A"],
+      "explanation": "Metoprolol ist ein Betablocker (Endung „-olol“). Ramipril ist ein ACE-Hemmer, Furosemid ein Schleifendiuretikum, Amlodipin ein Calciumkanalblocker und Digoxin ein Herzglykosid.",
+      "difficulty": 2,
+      "tags": ["wirkstoffgruppen"]
+    }
+  ],
+  "oralQuestions": [
+    {
+      "id": "pflege-oral-001",
+      "subject": "Pflege",
+      "topic": "Prophylaxen",
+      "chapter": "Dekubitus",
+      "question": "Erklären Sie bitte, was zur Dekubitusprophylaxe gehört.",
+      "modelAnswer": "Zur Dekubitusprophylaxe gehören die regelmäßige Umlagerung bzw. Mikrolagerung zur Druckentlastung, die Hautbeobachtung und Hautpflege, der Einsatz druckverteilender Hilfsmittel wie Wechseldruck- oder Weichlagerungsmatratzen, die Mobilisation sowie eine ausreichende Ernährung und Flüssigkeitszufuhr.",
+      "keyPoints": [
+        { "text": "Regelmäßige Umlagerung/Druckentlastung", "keywords": ["umlagern", "lagerung", "positionswechsel", "druckentlastung", "mikrolagerung"] },
+        { "text": "Hautbeobachtung und Hautpflege", "keywords": ["haut", "hautpflege", "inspektion", "hautbeobachtung"] },
+        { "text": "Druckverteilende Hilfsmittel", "keywords": ["matratze", "wechseldruck", "weichlagerung", "hilfsmittel", "antidekubitus"] },
+        { "text": "Mobilisation/Bewegungsförderung", "keywords": ["mobilisation", "mobilisieren", "bewegung", "bewegungsförderung"] },
+        { "text": "Ernährung und Flüssigkeit", "keywords": ["ernährung", "flüssigkeit", "trinken", "eiweiß"] }
+      ],
+      "followUps": ["Welche Rolle spielt die Haut dabei, und worauf achten Sie konkret?", "Nennen Sie Hilfsmittel, die den Druck verteilen."],
+      "tags": ["prophylaxe"]
+    },
+    {
+      "id": "pflege-oral-002",
+      "subject": "Pflege",
+      "topic": "Vitalzeichen",
+      "chapter": "Kontrolle",
+      "question": "Beschreiben Sie, welche Vitalzeichen Sie kontrollieren und worauf Sie dabei achten.",
+      "modelAnswer": "Kontrolliert werden Puls (Frequenz, Rhythmus, Qualität), Blutdruck, Atmung (Frequenz, Tiefe), Körpertemperatur sowie Bewusstsein und gegebenenfalls Schmerz bzw. Sauerstoffsättigung. Werte werden dokumentiert und Abweichungen dem Arzt gemeldet.",
+      "keyPoints": [
+        { "text": "Puls (Frequenz, Rhythmus)", "keywords": ["puls", "herzfrequenz", "rhythmus"] },
+        { "text": "Blutdruck", "keywords": ["blutdruck", "rr"] },
+        { "text": "Atmung", "keywords": ["atmung", "atemfrequenz", "atem"] },
+        { "text": "Körpertemperatur", "keywords": ["temperatur", "fieber", "körpertemperatur"] },
+        { "text": "Bewusstsein/Sauerstoffsättigung/Schmerz", "keywords": ["bewusstsein", "sauerstoffsättigung", "sättigung", "schmerz"] },
+        { "text": "Dokumentation und Meldung bei Abweichung", "keywords": ["dokumentation", "dokumentieren", "arzt", "melden"] }
+      ],
+      "followUps": ["Und was tun Sie, wenn ein Wert auffällig ist?"],
+      "tags": ["vitalzeichen"]
+    },
+    {
+      "id": "pflege-oral-003",
+      "subject": "Pflege",
+      "topic": "Notfall",
+      "chapter": "Schlaganfall",
+      "question": "Was tun Sie bei Verdacht auf einen Schlaganfall?",
+      "modelAnswer": "Symptome erkennen, zum Beispiel hängender Mundwinkel, Armschwäche und Sprachstörung (FAST). Sofort den Notruf 144 absetzen, den Zeitpunkt des Symptombeginns notieren, den Oberkörper erhöht lagern, nichts zu essen oder trinken geben wegen der Aspirationsgefahr, Vitalzeichen überwachen und die Person beruhigen.",
+      "keyPoints": [
+        { "text": "Symptome erkennen (Gesicht, Arm, Sprache – FAST)", "keywords": ["mundwinkel", "gesicht", "arm", "sprache", "sprachstörung", "fast", "lähmung"], "min": 2 },
+        { "text": "Sofort Notruf 144 / Rettung", "keywords": ["notruf", "144", "112", "rettung", "notarzt"] },
+        { "text": "Zeitpunkt des Symptombeginns notieren", "keywords": ["zeitpunkt", "symptombeginn", "uhrzeit", "zeit"] },
+        { "text": "Oberkörper hochlagern", "keywords": ["oberkörper", "hochlagern", "erhöht"] },
+        { "text": "Nichts essen/trinken (Aspirationsgefahr)", "keywords": ["aspiration", "nichts essen", "nichts trinken", "nüchtern"] },
+        { "text": "Vitalzeichen überwachen / beruhigen", "keywords": ["vitalzeichen", "überwachen", "beruhigen"] }
+      ],
+      "followUps": ["Warum ist der Zeitpunkt des Symptombeginns so wichtig?", "Was geben Sie dem Patienten zu essen oder zu trinken, und warum?"],
+      "tags": ["notfall", "neurologie"]
+    }
+  ]
+}

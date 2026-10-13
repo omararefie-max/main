@@ -1,0 +1,117 @@
+{
+  "format": "lernapp-content/v1",
+  "cards": [
+    {
+      "id": "med-herz-001",
+      "deck": "Medizin",
+      "topic": "Herz-Kreislauf",
+      "chapter": "Herzklappen",
+      "question": "Welche Herzklappe liegt zwischen dem linken Vorhof und der linken Kammer?",
+      "options": [
+        "Trikuspidalklappe",
+        "Mitralklappe (Bikuspidalklappe)",
+        "Aortenklappe",
+        "Pulmonalklappe",
+        "Eustachi-Klappe"
+      ],
+      "correct": ["B"],
+      "explanation": "Die Mitralklappe ist eine Segelklappe mit zwei Segeln und trennt linken Vorhof und linke Kammer. Die Trikuspidalklappe liegt rechts, Aorten- und Pulmonalklappe sind Taschenklappen am Ausgang der Kammern.",
+      "difficulty": 1,
+      "tags": ["Anatomie", "Klappen"]
+    },
+    {
+      "id": "med-stoffwechsel-001",
+      "deck": "Medizin",
+      "topic": "Stoffwechsel",
+      "chapter": "Blutzuckerregulation",
+      "question": "Welche Aussagen zu Insulin sind richtig? (Mehrfachauswahl)",
+      "options": [
+        "Es wird in den Beta-Zellen der Langerhans-Inseln der Bauchspeicheldrüse gebildet.",
+        "Es senkt den Blutzuckerspiegel.",
+        "Es wird in der Nebennierenrinde gebildet.",
+        "Es fördert die Glukoseaufnahme in Muskel- und Fettzellen.",
+        "Es steigert den Blutzuckerspiegel."
+      ],
+      "correct": ["A", "B", "D"],
+      "explanation": "Insulin wird in den Beta-Zellen des Pankreas gebildet, senkt den Blutzucker und fördert die Glukoseaufnahme in Muskel- und Fettzellen. Der Gegenspieler Glukagon steigert den Blutzucker.",
+      "difficulty": 2,
+      "tags": ["Hormone", "Diabetes"]
+    },
+    {
+      "id": "med-niere-001",
+      "deck": "Medizin",
+      "topic": "Niere",
+      "chapter": "Hormone",
+      "question": "Welches Hormon fördert in den Sammelrohren der Niere die Rückresorption von Wasser?",
+      "options": [
+        "Adiuretin (ADH, Vasopressin)",
+        "Calcitonin",
+        "Glukagon",
+        "Oxytocin",
+        "Parathormon"
+      ],
+      "correct": ["A"],
+      "explanation": "ADH (antidiuretisches Hormon, auch Adiuretin oder Vasopressin) wird im Hypothalamus gebildet, in der Neurohypophyse gespeichert und lässt in den Sammelrohren Wasserkanäle (Aquaporine) einbauen. Der Urin wird dadurch konzentriert.",
+      "difficulty": 2,
+      "tags": ["Hormone", "Wasserhaushalt"]
+    }
+  ],
+  "examQuestions": [
+    {
+      "id": "med-pruef-herz-001",
+      "deck": "Medizin",
+      "topic": "Herz-Kreislauf",
+      "chapter": "Aufbau und Funktion",
+      "question": "Erklären Sie bitte den Aufbau und die Funktion des Herzens.",
+      "modelAnswer": "Das Herz ist ein Hohlmuskel mit vier Räumen: zwei Vorhöfen und zwei Kammern. Die rechte Herzhälfte pumpt sauerstoffarmes Blut durch den Lungenkreislauf, die linke Hälfte pumpt sauerstoffreiches Blut durch den Körperkreislauf. Die Herzklappen (Segelklappen und Taschenklappen) wirken als Ventile und sorgen für eine feste Flussrichtung. Die Erregung entsteht im Sinusknoten und wird über den AV-Knoten auf die Kammern übertragen.",
+      "keyPoints": [
+        { "label": "Vier Hohlräume (zwei Vorhöfe, zwei Kammern)", "keywords": ["Vorhof", "Vorhöfe", "Kammer", "Ventrikel", "Atrium"], "weight": 1 },
+        { "label": "Herzklappen als Ventile", "keywords": ["Herzklappe", "Klappen", "Segelklappe", "Taschenklappe", "Mitralklappe", "Ventil"], "weight": 1 },
+        { "label": "Lungenkreislauf (kleiner Kreislauf)", "keywords": ["Lungenkreislauf", "kleiner Kreislauf", "Lunge"], "weight": 1 },
+        { "label": "Körperkreislauf (großer Kreislauf)", "keywords": ["Körperkreislauf", "großer Kreislauf", "Körper"], "weight": 1 },
+        { "label": "Sinusknoten (Erregungsbildung)", "keywords": ["Sinusknoten", "Erregung", "Schrittmacher", "AV-Knoten"], "weight": 1 }
+      ],
+      "followUps": [
+        "Welche Aufgabe haben die Herzklappen?",
+        "Wo entsteht die elektrische Erregung des Herzens?"
+      ]
+    },
+    {
+      "id": "med-pruef-stoffwechsel-001",
+      "deck": "Medizin",
+      "topic": "Stoffwechsel",
+      "chapter": "Blutzuckerregulation",
+      "question": "Beschreiben Sie die Regulation des Blutzuckerspiegels.",
+      "modelAnswer": "Der Blutzucker wird vor allem durch zwei Hormone der Bauchspeicheldrüse geregelt: Insulin aus den Beta-Zellen senkt den Blutzucker, indem es die Glukoseaufnahme in Zellen fördert und die Speicherung als Glykogen in Leber und Muskel anregt. Glukagon aus den Alpha-Zellen steigert den Blutzucker durch den Abbau von Glykogen in der Leber. Bei einem Insulinmangel oder einer Insulinresistenz entsteht ein Diabetes mellitus.",
+      "keyPoints": [
+        { "label": "Insulin senkt den Blutzucker", "keywords": ["Insulin"], "weight": 2 },
+        { "label": "Glukagon steigert den Blutzucker", "keywords": ["Glukagon", "Glucagon"], "weight": 2 },
+        { "label": "Bauchspeicheldrüse (Pankreas)", "keywords": ["Bauchspeicheldrüse", "Pankreas", "Langerhans"], "weight": 1 },
+        { "label": "Leber und Glykogenspeicher", "keywords": ["Leber", "Glykogen"], "weight": 1 },
+        { "label": "Diabetes mellitus", "keywords": ["Diabetes", "Zuckerkrankheit"], "weight": 1 }
+      ],
+      "followUps": [
+        "Welches Hormon wirkt als Gegenspieler des Insulins?",
+        "Was passiert bei einem Mangel an Insulin?"
+      ]
+    },
+    {
+      "id": "med-pruef-lunge-001",
+      "deck": "Medizin",
+      "topic": "Atmung",
+      "chapter": "Erkrankungen",
+      "question": "Was versteht man unter einer Pneumonie, und welche Symptome treten typischerweise auf?",
+      "modelAnswer": "Eine Pneumonie ist eine Entzündung des Lungengewebes, meist der Lungenbläschen (Alveolen), die durch Bakterien, zum Beispiel Pneumokokken, oder durch Viren ausgelöst wird. Typische Symptome sind Fieber, Husten mit Auswurf, Atemnot und Schüttelfrost. Die Diagnose erfolgt durch Abhören der Lunge (Auskultation) und Röntgenbild, die Therapie bei bakterieller Ursache mit Antibiotika.",
+      "keyPoints": [
+        { "label": "Entzündung des Lungengewebes / der Alveolen", "keywords": ["Entzündung", "Lungenentzündung", "Alveolen", "Lungenbläschen"], "weight": 2 },
+        { "label": "Erreger (Bakterien, Viren)", "keywords": ["Bakterien", "Viren", "Pneumokokken", "Erreger"], "weight": 1 },
+        { "label": "Symptome: Fieber, Husten, Atemnot", "keywords": ["Fieber", "Husten", "Auswurf", "Atemnot"], "weight": 2 },
+        { "label": "Diagnostik: Röntgen, Auskultation", "keywords": ["Röntgen", "Auskultation", "Abhören"], "weight": 1 },
+        { "label": "Therapie: Antibiotika", "keywords": ["Antibiotika", "Antibiotikum"], "weight": 1 }
+      ],
+      "followUps": [
+        "Wie wird eine bakterielle Pneumonie behandelt?"
+      ]
+    }
+  ]
+}

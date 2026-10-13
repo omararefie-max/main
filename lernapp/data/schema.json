@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lernapp/1",
+  "title": "Lernapp – Inhaltsdatei",
+  "description": "Format für den JSON-Import. Karten und Prüfungsfragen werden über das Feld „id“ eindeutig identifiziert: Beim erneuten Import werden Einträge mit gleicher id aktualisiert, neue ergänzt – der Lernfortschritt bleibt erhalten. Ohne id wird eine stabile id aus dem Fragetext gebildet (Achtung: Ändert man den Fragetext, entsteht dann eine NEUE Karte – deshalb eigene ids vergeben!).",
+  "type": "object",
+  "properties": {
+    "format": { "const": "lernapp/1", "description": "Optional, Kennung des Formats." },
+    "cards": { "type": "array", "items": { "$ref": "#/definitions/card" }, "description": "Quiz-Karten (Modul 1 + 2)." },
+    "oralQuestions": { "type": "array", "items": { "$ref": "#/definitions/oral" }, "description": "Fragen der mündlichen Prüfung (Modul 3)." }
+  },
+  "definitions": {
+    "common": {
+      "properties": {
+        "id": { "type": "string", "description": "Feste, eindeutige ID, z. B. \"pflege-vital-001\". Nie ändern, wenn der Lernfortschritt erhalten bleiben soll." },
+        "subject": { "type": "string", "description": "Fach (oberste Ebene), z. B. \"Pflege\"." },
+        "topic": { "type": "string", "description": "Thema, z. B. \"Vitalzeichen\"." },
+        "chapter": { "type": "string", "description": "Kapitel/Unterthema, z. B. \"Puls\"." },
+        "tags": { "type": "array", "items": { "type": "string" }, "description": "Freie Schlagworte." }
+      }
+    },
+    "card": {
+      "type": "object",
+      "required": ["question", "answers", "correct"],
+      "properties": {
+        "id": { "$ref": "#/definitions/common/properties/id" },
+        "subject": { "$ref": "#/definitions/common/properties/subject" },
+        "topic": { "$ref": "#/definitions/common/properties/topic" },
+        "chapter": { "$ref": "#/definitions/common/properties/chapter" },
+        "question": { "type": "string", "minLength": 1, "description": "Fragetext." },
+        "answers": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "string", "minLength": 1 }, "description": "GENAU 5 Antworten (A–E), in dieser Reihenfolge." },
+        "correct": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "enum": ["A", "B", "C", "D", "E"] },
+          "description": "Buchstaben der richtigen Antworten. Ein Buchstabe = Einzelauswahl, mehrere = Mehrfachauswahl (alle müssen gewählt werden)."
+        },
+        "explanation": { "type": "string", "description": "Erklärung zur richtigen Lösung (wird angezeigt und vorgelesen)." },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3, "description": "Optional: 1 leicht, 2 mittel, 3 schwer." },
+        "tags": { "$ref": "#/definitions/common/properties/tags" }
+      }
+    },
+    "keyPoint": {
+      "description": "Ein Pflichtpunkt der Musterantwort. Kurzform als String: \"Text :: Begriff | Begriff :: Mindestanzahl\".",
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object", "required": ["text", "keywords"],
+          "properties": {
+            "text": { "type": "string", "description": "Wie der Punkt im Protokoll erscheint." },
+            "keywords": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "Begriffe/Wortstämme, von denen mindestens `min` genannt werden müssen. Groß-/Kleinschreibung und Umlaute egal; Wortstämme genügen (z. B. \"mobilisier\")." },
+            "min": { "type": "integer", "minimum": 1, "default": 1, "description": "Wie viele der Begriffe mindestens genannt werden müssen." },
+            "weight": { "type": "number", "minimum": 0, "default": 1, "description": "Gewichtung des Punkts." }
+          }
+        }
+      ]
+    },
+    "oral": {
+      "type": "object",
+      "required": ["question"],
+      "anyOf": [{ "required": ["modelAnswer"] }, { "required": ["keyPoints"] }],
+      "properties": {
+        "id": { "$ref": "#/definitions/common/properties/id" },
+        "subject": { "$ref": "#/definitions/common/properties/subject" },
+        "topic": { "$ref": "#/definitions/common/properties/topic" },
+        "chapter": { "$ref": "#/definitions/common/properties/chapter" },
+        "question": { "type": "string", "minLength": 1, "description": "Die Frage des Prüfers (Einstiegsfrage)." },
+        "modelAnswer": { "type": "string", "description": "Musterantwort (wird im Protokoll gezeigt; wenn keyPoints fehlen, werden Pflichtpunkte daraus abgeleitet)." },
+        "keyPoints": { "type": "array", "items": { "$ref": "#/definitions/keyPoint" }, "description": "Pflichtpunkte/Schlüsselbegriffe für die Bewertung." },
+        "followUps": { "type": "array", "items": { "type": "string" }, "description": "Optionale Nachfragen, falls Punkte fehlen. Ohne Eintrag fragt der Prüfer „Können Sie das genauer erläutern?“." },
+        "tags": { "$ref": "#/definitions/common/properties/tags" }
+      }
+    }
+  }
+}

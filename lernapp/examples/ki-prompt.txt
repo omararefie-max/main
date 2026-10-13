@@ -1,0 +1,52 @@
+Du bist Lerninhalts-Autor. Wandle den folgenden Lernstoff in Datensätze für meine Lern-App um und gib AUSSCHLIESSLICH gültiges JSON zurück (ohne Erklärtext, ohne Markdown-Codeblock).
+
+FORMAT
+{
+  "format": "lernapp-content/v1",
+  "cards": [ <Quizkarten> ],
+  "examQuestions": [ <Fragen für die mündliche Prüfung> ]
+}
+
+QUIZKARTE (Multiple Choice)
+{
+  "id": "eindeutige-stabile-id, z. B. fach-thema-001",
+  "deck": "Fach",
+  "topic": "Thema",
+  "chapter": "Kapitel (optional, sonst leerer String)",
+  "question": "Fragetext",
+  "options": ["Antwort A", "Antwort B", "Antwort C", "Antwort D", "Antwort E"],
+  "correct": ["B"],
+  "explanation": "Kurze Erklärung, warum die richtige(n) Antwort(en) stimmen. NICHT auf Buchstaben verweisen (die Reihenfolge kann gemischt werden).",
+  "difficulty": 1,
+  "tags": ["Schlagwort"]
+}
+Regeln:
+- GENAU 5 Antwortmöglichkeiten, alle nicht leer.
+- "correct" ist eine Liste mit mindestens einem Buchstaben aus A–E. Ein Buchstabe = Einzelauswahl, mehrere = Mehrfachauswahl (dann in der Frage "(Mehrfachauswahl)" erwähnen).
+- Falsche Antworten sollen plausibel, aber eindeutig falsch sein. Verteile die richtigen Antworten gleichmäßig auf A–E.
+- difficulty: 1 = leicht, 2 = mittel, 3 = schwer.
+
+PRÜFUNGSFRAGE (mündlich)
+{
+  "id": "eindeutige-stabile-id",
+  "deck": "Fach",
+  "topic": "Thema",
+  "chapter": "",
+  "question": "Offene Frage, wie ein Prüfer sie stellen würde",
+  "modelAnswer": "Vollständige Musterantwort in 3–6 Sätzen",
+  "keyPoints": [
+    { "label": "Pflichtpunkt in Worten", "keywords": ["Begriff", "Synonym", "Fachwort"], "weight": 1 }
+  ],
+  "followUps": ["Optionale Nachfrage, falls Punkte fehlen"]
+}
+Regeln:
+- 3–7 keyPoints pro Frage. Jeder keyPoint hat eine kurze "label" und 2–6 "keywords": einzelne Fachbegriffe und Synonyme in der Schreibweise, wie sie gesprochen werden (Einzahl/Mehrzahl müssen nicht beide stehen). Keine ganzen Sätze als Keywords.
+- "weight" (Standard 1) höher setzen (2–3) bei besonders wichtigen Punkten.
+- 1–2 followUps pro Frage, die gezielt auf häufig vergessene Punkte hinführen.
+
+ALLGEMEIN
+- Sprache: Deutsch. Inhalte nur aus dem unten stehenden Stoff, nichts erfinden.
+- IDs müssen eindeutig und stabil sein (kleinbuchstaben, Bindestriche), damit ein erneuter Import Inhalte aktualisiert, ohne Lernfortschritt zu verlieren.
+
+MEIN LERNSTOFF (Fach: …, Thema: …, gewünschte Anzahl Karten: …, Anzahl Prüfungsfragen: …):
+<hier den Text einfügen>

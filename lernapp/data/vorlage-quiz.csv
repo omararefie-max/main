@@ -1,0 +1,3 @@
+typ;id;fach;thema;kapitel;frage;A;B;C;D;E;richtig;erklaerung;schwierigkeit;tags
+quiz;pflege-vital-101;Pflege;Vitalzeichen;Blutdruck;Ab welchem Wert spricht man bei Erwachsenen von Hypertonie?;ab 100/60 mmHg;ab 120/80 mmHg;ab 140/90 mmHg;ab 90/50 mmHg;ab 200/120 mmHg;C;Hypertonie liegt ab wiederholt gemessenen Werten von 140/90 mmHg vor.;1;blutdruck,grundlagen
+quiz;pflege-vital-102;Pflege;Vitalzeichen;Atmung;Welche Aussagen zur normalen Atemfrequenz Erwachsener stimmen?;12–20 pro Minute;Unter 8 pro Minute ist normal;Sie steigt bei Fieber oft an;Sie ist immer gleich;Über 40 pro Minute ist normal;A,C;Normal sind etwa 12–20 Atemzüge pro Minute; Fieber und Anstrengung erhöhen sie.;2;atmung

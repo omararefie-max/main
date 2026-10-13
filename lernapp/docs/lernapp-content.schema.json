@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lernapp-content/v1",
+  "title": "Lernapp Inhalte",
+  "description": "Importformat für Quizkarten (Modul 1/2) und Prüfungsfragen (Modul 3). Gleiche 'id' = vorhandener Eintrag wird aktualisiert, der Lernfortschritt bleibt erhalten.",
+  "type": "object",
+  "properties": {
+    "format": { "const": "lernapp-content/v1" },
+    "cards": { "type": "array", "items": { "$ref": "#/$defs/card" } },
+    "examQuestions": { "type": "array", "items": { "$ref": "#/$defs/examQuestion" } }
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "properties": {
+        "deck": { "type": "string", "description": "Fach, z. B. 'Medizin'. Standard: 'Allgemein'." },
+        "topic": { "type": "string", "description": "Thema innerhalb des Fachs. Standard: 'Allgemein'." },
+        "chapter": { "type": "string", "description": "Kapitel (optional)." }
+      }
+    },
+    "card": {
+      "title": "Quizkarte",
+      "allOf": [{ "$ref": "#/$defs/scope" }],
+      "type": "object",
+      "required": ["question", "options", "correct"],
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutig und stabil. Fehlt sie, wird sie aus Fach+Frage berechnet (ändert sich dann, wenn du die Frage umformulierst)." },
+        "question": { "type": "string", "minLength": 1 },
+        "options": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "string", "minLength": 1 }, "description": "Genau 5 Antworten; Position 0–4 entspricht A–E." },
+        "correct": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["A", "B", "C", "D", "E"] }, "description": "Ein Buchstabe = Einzelauswahl, mehrere = Mehrfachauswahl." },
+        "explanation": { "type": "string", "description": "Erklärung zur richtigen Lösung (ohne Verweis auf Buchstaben, da Antworten gemischt werden können)." },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3, "description": "1 leicht, 2 mittel, 3 schwer (optional)." },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "keyPoint": {
+      "title": "Pflichtpunkt",
+      "description": "Als Objekt oder als String 'Bezeichnung = Begriff1 / Begriff2' (bzw. nur 'Begriff1 / Begriff2').",
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "required": ["label"],
+          "properties": {
+            "label": { "type": "string", "description": "Kurzbeschreibung des Punktes (wird im Protokoll angezeigt)." },
+            "keywords": { "type": "array", "items": { "type": "string" }, "description": "Begriffe/Synonyme; ein Treffer reicht. Mehrwort-Begriffe: alle Wörter müssen vorkommen." },
+            "weight": { "type": "number", "exclusiveMinimum": 0, "default": 1, "description": "Gewichtung für die Prozentwertung." }
+          }
+        }
+      ]
+    },
+    "examQuestion": {
+      "title": "Prüfungsfrage (mündlich)",
+      "allOf": [{ "$ref": "#/$defs/scope" }],
+      "type": "object",
+      "required": ["question", "keyPoints"],
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string", "minLength": 1 },
+        "modelAnswer": { "type": "string", "description": "Musterantwort (wird im Protokoll angezeigt)." },
+        "keyPoints": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/keyPoint" } },
+        "followUps": { "type": "array", "items": { "type": "string" }, "description": "Nachfragen, die gestellt werden, wenn Pflichtpunkte fehlen (max. 2 pro Frage)." }
+      }
+    }
+  }
+}

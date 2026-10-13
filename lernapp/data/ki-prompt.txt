@@ -1,0 +1,43 @@
+Du bist ein Fachautor für Prüfungsvorbereitung. Wandle das folgende Lernmaterial in Inhalte für meine Lern-App um.
+
+Gib AUSSCHLIESSLICH gültiges JSON aus (kein Fließtext, keine Markdown-Codeblöcke) nach diesem Muster:
+
+{
+  "format": "lernapp/1",
+  "cards": [
+    {
+      "id": "<fach-thema-001, eindeutig, nie ändern>",
+      "subject": "<Fach>", "topic": "<Thema>", "chapter": "<Kapitel>",
+      "question": "<Frage>",
+      "answers": ["<A>", "<B>", "<C>", "<D>", "<E>"],
+      "correct": ["B"],
+      "explanation": "<Warum ist das richtig? Kurz und prüfungsnah>",
+      "difficulty": 1,
+      "tags": ["<tag>"]
+    }
+  ],
+  "oralQuestions": [
+    {
+      "id": "<fach-oral-001>",
+      "subject": "<Fach>", "topic": "<Thema>", "chapter": "<Kapitel>",
+      "question": "<offene Prüferfrage>",
+      "modelAnswer": "<Musterantwort in 3–6 Sätzen>",
+      "keyPoints": [
+        { "text": "<Pflichtpunkt>", "keywords": ["<Begriff/Wortstamm>", "<Synonym>"], "min": 1 }
+      ],
+      "followUps": ["<Nachfrage, falls Punkte fehlen>"]
+    }
+  ]
+}
+
+Regeln:
+- Jede Quiz-Karte hat GENAU 5 Antworten (A–E) und mindestens 1 richtige; "correct" enthält die Buchstaben (mehrere = Mehrfachauswahl).
+- Falsche Antworten müssen plausibel, aber eindeutig falsch sein. Keine "Alle der oben genannten"-Antworten.
+- Pro Prüfungsfrage 3–7 Pflichtpunkte; je Punkt 2–5 Schlüsselbegriffe (auch Synonyme, Wortstämme sind ok, z. B. "mobilisier").
+- Verwende ausschließlich Fakten aus dem Material. Wenn etwas unklar ist, lass die Karte weg.
+- Erzeuge je Abschnitt ca. <Anzahl> Quiz-Karten und <Anzahl> Prüfungsfragen.
+
+Material:
+<<<
+(hier dein Lernmaterial einfügen)
+>>>

@@ -1,0 +1,4 @@
+id;fach;thema;kapitel;frage;musterantwort;schluesselbegriffe;nachfragen
+csv-m001;Innere Medizin;Kardiologie;KHK;"Was ist ein Myokardinfarkt?";"Verschluss eines Herzkranzgefäßes mit Absterben von Herzmuskelgewebe; Brustschmerz, EKG, Troponin, PCI.";"Herzkranzgefäß/Koronararterie|Verschluss/Thrombus|Herzmuskel/Myokard/Nekrose|Brustschmerz/Thoraxschmerz|EKG|Troponin|PCI/Herzkatheter";"Welche Untersuchungen veranlassen Sie?|Wie behandeln Sie akut?"
+csv-m002;Innere Medizin;Endokrinologie;Diabetes;"Wie entsteht Diabetes Typ 2?";"Insulinresistenz, später relativer Insulinmangel; Therapie: Lebensstil, Metformin.";"Insulinresistenz|Insulinmangel|Lebensstil/Ernährung/Bewegung|Metformin|HbA1c";"Welche Folgeerkrankungen gibt es?"
+csv-m003;Notfallmedizin;Reanimation;BLS;"Schritte der Basisreanimation?";"Bewusstsein, Atmung, Notruf 144, Herzdruckmassage 30:2, AED.";"Bewusstsein/ansprechen|Atmung|Notruf/144/112|Herzdruckmassage/Kompressionen|30 zu 2/30:2|AED/Defibrillator";

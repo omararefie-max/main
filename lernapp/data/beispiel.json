@@ -1,0 +1,121 @@
+{
+  "format": "pruefungstrainer-v1",
+  "karten": [
+    {
+      "id": "med-kardio-001",
+      "fach": "Innere Medizin",
+      "thema": "Kardiologie",
+      "kapitel": "Arterielle Hypertonie",
+      "frage": "Ab welchem Praxis-Blutdruckwert wird nach den europäischen Leitlinien (ESC/ESH) eine arterielle Hypertonie diagnostiziert?",
+      "antworten": [
+        "ab 120/80 mmHg",
+        "ab 130/85 mmHg",
+        "ab 140/90 mmHg",
+        "ab 160/100 mmHg",
+        "ab 180/110 mmHg"
+      ],
+      "richtig": ["C"],
+      "erklaerung": "Eine Hypertonie liegt bei wiederholten Praxismessungen ab 140/90 mmHg vor. Werte von 130–139/85–89 mmHg gelten als hochnormal, ab 180/110 mmHg spricht man von einer schweren Hypertonie (Grad 3).",
+      "schwierigkeit": 1,
+      "tags": ["Blutdruck", "Leitlinie", "Grundlagen"]
+    },
+    {
+      "id": "med-endo-001",
+      "fach": "Innere Medizin",
+      "thema": "Endokrinologie",
+      "kapitel": "Diabetes mellitus",
+      "frage": "Welche Symptome sind typisch für eine Hypoglykämie? (Mehrfachauswahl)",
+      "antworten": [
+        "Schwitzen und Zittern",
+        "Heißhunger",
+        "Azetongeruch der Atemluft",
+        "Kußmaul-Atmung",
+        "Herzklopfen (Tachykardie)"
+      ],
+      "richtig": ["A", "B", "E"],
+      "erklaerung": "Bei Unterzuckerung überwiegen adrenerge Warnzeichen wie Schwitzen, Zittern, Herzklopfen und Heißhunger. Azetongeruch und Kußmaul-Atmung gehören zur diabetischen Ketoazidose, also zur Überzuckerung.",
+      "schwierigkeit": 2,
+      "tags": ["Diabetes", "Notfall"]
+    },
+    {
+      "id": "med-pharma-001",
+      "fach": "Pharmakologie",
+      "thema": "Antidote",
+      "kapitel": "",
+      "frage": "Welcher Wirkstoff ist das spezifische Antidot bei einer Opioid-Überdosierung mit Atemdepression?",
+      "antworten": [
+        "Flumazenil",
+        "Naloxon",
+        "Atropin",
+        "Physostigmin",
+        "Acetylcystein"
+      ],
+      "richtig": ["B"],
+      "erklaerung": "Naloxon ist ein Opioid-Antagonist. Zu beachten: Seine Wirkdauer ist oft kürzer als die des Opioids, deshalb ist eine Überwachung nötig. Flumazenil wirkt bei Benzodiazepinen, Atropin bei Cholinesterasehemmern, Acetylcystein bei Paracetamol-Vergiftung.",
+      "schwierigkeit": 2,
+      "tags": ["Antidot", "Notfall"]
+    }
+  ],
+  "pruefungsfragen": [
+    {
+      "id": "med-kardio-m001",
+      "fach": "Innere Medizin",
+      "thema": "Kardiologie",
+      "kapitel": "Koronare Herzkrankheit",
+      "frage": "Erklären Sie bitte, was ein Myokardinfarkt ist und woran man ihn erkennt.",
+      "musterantwort": "Beim Myokardinfarkt verschließt sich ein Herzkranzgefäß, meist durch ein Blutgerinnsel auf einer aufgebrochenen Plaque. Das nachgelagerte Herzmuskelgewebe wird nicht mehr durchblutet und stirbt ab (Nekrose). Typisch sind starke, anhaltende Brustschmerzen mit Ausstrahlung in Arm, Kiefer oder Rücken, dazu Übelkeit, Schweißausbruch und Todesangst. Diagnostiziert wird über EKG und Troponin. Therapie ist die rasche Wiedereröffnung des Gefäßes, meist per Herzkatheter (PCI).",
+      "schluesselbegriffe": [
+        "Koronararterie/Herzkranzgefäß/Koronargefäß",
+        "Verschluss/Thrombus/Gerinnsel",
+        "Herzmuskel/Myokard/Nekrose/Absterben",
+        "Brustschmerz/Thoraxschmerz/Angina pectoris",
+        "Ausstrahlung/Arm/Kiefer",
+        "EKG",
+        "Troponin",
+        "PCI/Herzkatheter/Lyse"
+      ],
+      "nachfragen": [
+        "Welche Untersuchungen veranlassen Sie bei Verdacht auf einen Infarkt?",
+        "Wie sieht die Akuttherapie aus?"
+      ]
+    },
+    {
+      "id": "med-endo-m001",
+      "fach": "Innere Medizin",
+      "thema": "Endokrinologie",
+      "kapitel": "Diabetes mellitus",
+      "frage": "Beschreiben Sie die Entstehung und die Behandlung des Diabetes mellitus Typ 2.",
+      "musterantwort": "Beim Typ-2-Diabetes besteht eine Insulinresistenz der Körperzellen, später kommt ein relativer Insulinmangel hinzu, weil die Betazellen der Bauchspeicheldrüse erschöpfen. Risikofaktoren sind Übergewicht, Bewegungsmangel und familiäre Veranlagung. Die Basis der Therapie ist eine Lebensstiländerung mit Ernährungsumstellung und Bewegung. Medikamentös ist Metformin das Mittel der ersten Wahl, später kommen weitere Substanzen oder Insulin hinzu. Kontrolliert wird mit Blutzucker und HbA1c. Unbehandelt drohen Folgeschäden an Augen, Nieren, Nerven und Gefäßen.",
+      "schluesselbegriffe": [
+        "Insulinresistenz",
+        "Insulinmangel",
+        "Übergewicht/Adipositas",
+        "Lebensstil/Ernährung/Bewegung",
+        "Metformin",
+        "HbA1c",
+        "Folgeerkrankungen/Neuropathie/Nephropathie/Retinopathie/Spätschäden"
+      ],
+      "nachfragen": ["Welche Folgeerkrankungen kennen Sie?"]
+    },
+    {
+      "id": "med-notfall-m001",
+      "fach": "Notfallmedizin",
+      "thema": "Reanimation",
+      "kapitel": "Basic Life Support",
+      "frage": "Nennen Sie die Schritte der Basisreanimation bei einem bewusstlosen Erwachsenen.",
+      "musterantwort": "Zuerst Eigenschutz beachten, dann die Person laut ansprechen und anfassen, um das Bewusstsein zu prüfen. Bei fehlender Reaktion Atmung prüfen: Kopf überstrecken, Atmung maximal zehn Sekunden beurteilen. Bei fehlender oder abnormaler Atmung den Notruf 144 oder 112 absetzen und einen Defibrillator (AED) holen lassen. Dann Herzdruckmassage in der Mitte des Brustkorbs, Drucktiefe fünf bis sechs Zentimeter, Frequenz 100 bis 120 pro Minute, im Wechsel 30 Kompressionen und 2 Beatmungen. Sobald der AED da ist, einschalten und den Anweisungen folgen.",
+      "schluesselbegriffe": [
+        "Eigenschutz",
+        "Bewusstsein/ansprechen",
+        "Atmung prüfen/Atmung kontrollieren",
+        "Notruf/144/112",
+        "Herzdruckmassage/Thoraxkompression/Kompressionen",
+        "Drucktiefe/5 bis 6 Zentimeter/fünf bis sechs",
+        "100 bis 120/Frequenz",
+        "30 zu 2/30:2/dreißig",
+        "AED/Defibrillator"
+      ],
+      "nachfragen": ["Wie tief und wie schnell drücken Sie?", "Wann setzen Sie den Defibrillator ein?"]
+    }
+  ]
+}
